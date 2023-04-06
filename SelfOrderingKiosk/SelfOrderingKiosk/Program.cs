@@ -1,4 +1,4 @@
-﻿using System;
+﻿using SelfOrderingKiosk.Configuration;
 
 namespace SelfOrderingKiosk
 {
@@ -6,7 +6,7 @@ namespace SelfOrderingKiosk
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            DbConfiguration.LoadConfiguration();
         }
     }
 }
