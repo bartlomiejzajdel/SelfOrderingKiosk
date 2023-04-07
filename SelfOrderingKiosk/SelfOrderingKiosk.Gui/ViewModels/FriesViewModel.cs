@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SelfOrderingKiosk.Gui.ViewModel
+namespace SelfOrderingKiosk.Gui.ViewModels
 {
     class FriesViewModel
     {
