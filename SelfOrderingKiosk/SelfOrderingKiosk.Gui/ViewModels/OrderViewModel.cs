@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SelfOrderingKiosk.Gui.ViewModels
 {
-    class OrderViewModel
+    public class OrderViewModel
     {
     }
 }
