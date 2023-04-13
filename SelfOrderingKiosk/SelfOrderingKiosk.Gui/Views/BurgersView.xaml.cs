@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace SelfOrderingKiosk.Gui.Views
 {
     /// <summary>
-    /// Interaction logic for BurgerView.xaml
+    /// Interaction logic for BurgersView.xaml
     /// </summary>
-    public partial class BurgerView : UserControl
+    public partial class BurgersView : UserControl
     {
-        public BurgerView()
+        public BurgersView()
         {
             InitializeComponent();
         }
