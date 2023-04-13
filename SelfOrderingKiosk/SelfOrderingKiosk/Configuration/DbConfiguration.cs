@@ -7,6 +7,6 @@ namespace SelfOrderingKiosk.Configuration
         public static void LoadConfiguration()
         {
             DbConnection.SetConnectionString(ConfigurationManager.ConnectionStrings["SelfOrderingKioskConnectionString"].ConnectionString);
-          }
+        }
     }
 }
