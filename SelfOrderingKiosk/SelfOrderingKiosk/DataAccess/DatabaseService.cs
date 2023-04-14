@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace SelfOrderingKiosk.DataAccess
 {
-    public class DatabaseService
+    public static class DatabaseService
     {
 
         private static DataTable SelectFromDatabase(string dbName, string procedureName, SqlParameter[] parameters)
@@ -46,7 +46,7 @@ namespace SelfOrderingKiosk.DataAccess
             return SelectFromDatabase(dbName, storedProcedureName, Array.Empty<SqlParameter>());
         }
 
-        public List<Product> GetProductsList()
+        public static List<Product> GetProductsList()
         {
             var table = GetProducts();
             var collection = new List<Product>();

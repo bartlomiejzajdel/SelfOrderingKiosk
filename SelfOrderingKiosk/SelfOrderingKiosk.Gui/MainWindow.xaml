@@ -5,13 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodels="clr-namespace:SelfOrderingKiosk.Gui.ViewModels"
         xmlns:views="clr-namespace:SelfOrderingKiosk.Gui.Views"
-        xmlns:local="clr-namespace:SelfOrderingKiosk.Gui"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="850" Width="800">
 
     <Window.Resources>
         <DataTemplate x:Name="burgersViewTemplate" DataType="{x:Type viewmodels:BurgersViewModel}">
-            <views:BurgerView DataContext="{Binding}"/>
+            <views:BurgersView DataContext="{Binding}"/>
         </DataTemplate>
         <DataTemplate x:Name="friesViewTemplate" DataType="{x:Type viewmodels:FriesViewModel}">
             <views:FriesView DataContext="{Binding}"/>
@@ -41,5 +40,46 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
+        <DockPanel Background="#FFDD42" Grid.Column="0" Grid.RowSpan="5">
+            <StackPanel>
+                <Button x:Name = "ButtonBurgers" Background="#FFDD42" Click="BurgersView_Clicked">
+                    <StackPanel>
+                        <Image Source="/Images/bigmac.jpg" Height="180"/>
+                        <TextBlock TextAlignment="Center"><Bold>Burgers</Bold></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name = "ButtonFries" Background="#FFDD42" Click="FriesView_Clicked">
+                    <StackPanel>
+                        <Image Source="/Images/fries.jpg" Height="180"/>
+                        <TextBlock TextAlignment="Center"><Bold>Fries</Bold></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button x:Name = "ButtonDrinks" Background="#FFDD42" Click="DrinksView_Clicked">
+                    <StackPanel>
+                        <Image Source="/Images/drink.jpg" Height="180"/>
+                        <TextBlock TextAlignment="Center"><Bold>Drinks</Bold></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Border BorderBrush="{x:Null}" BorderThickness="0 250">
+                    <StackPanel>
+                        <Label x:Name="LabelBasket" Content="Basket" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+                        <Label x:Name="LabelNumberOfItems" Content="Number Of Items" HorizontalAlignment="Center" FontWeight="Bold"/>
+                        <TextBox x:Name = "TxtBlockNumberOfItems" IsReadOnly="True"/>
+                        <Label x:Name="LabelTotalAmmount" Content="Total Ammount" HorizontalAlignment="Center" FontWeight="Bold"/>
+                        <TextBox x:Name = "TxtBlockCurrentAmmount" IsReadOnly="True"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button x:Name = "ViewOrderButton" Content = "View Order"/>
+                            <!--<Button x:Name = "GoToPaymentButton" Content = "Go to payment" Click="GoToPayment_Click" Visibility="Collapsed"/>
+                            <Button x:Name = "ClearBasketButton" Content = "Clear Order" Click="ClearOrder_Click"/>-->
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </DockPanel>
+
+        <ContentControl Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="5" Content="{Binding}"/>
+
     </Grid>
+    
 </Window>
