@@ -1,5 +1,6 @@
 ﻿using SelfOrderingKiosk.Configuration;
 using SelfOrderingKiosk.Gui.ViewModels;
+using SelfOrderingKiosk.Models;
 using System.Windows;
 
 namespace SelfOrderingKiosk.Gui
@@ -13,6 +14,9 @@ namespace SelfOrderingKiosk.Gui
         {
             DbConfiguration.LoadConfiguration();
             InitializeComponent();
+            WindowState = WindowState.Maximized;
+            BurgersView_Clicked(this, new RoutedEventArgs());
+            
         }
 
         private void BurgersView_Clicked(object sender, RoutedEventArgs e)
@@ -28,6 +32,11 @@ namespace SelfOrderingKiosk.Gui
         private void DrinksView_Clicked(object sender, RoutedEventArgs e)
         {
             DataContext = new DrinksViewModel();
+        }
+
+        private void OrderView_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new OrderViewModel();
         }
     }
 }

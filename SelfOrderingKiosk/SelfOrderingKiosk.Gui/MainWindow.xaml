@@ -43,19 +43,19 @@
 
         <DockPanel Background="#FFDD42" Grid.Column="0" Grid.RowSpan="5">
             <StackPanel>
-                <Button x:Name = "ButtonBurgers" Background="#FFDD42" Click="BurgersView_Clicked">
+                <Button x:Name = "BurgersButton" Background="#FFDD42" Click="BurgersView_Clicked">
                     <StackPanel>
                         <Image Source="/Images/bigmac.jpg" Height="180"/>
                         <TextBlock TextAlignment="Center"><Bold>Burgers</Bold></TextBlock>
                     </StackPanel>
                 </Button>
-                <Button x:Name = "ButtonFries" Background="#FFDD42" Click="FriesView_Clicked">
+                <Button x:Name = "FriesButton" Background="#FFDD42" Click="FriesView_Clicked">
                     <StackPanel>
                         <Image Source="/Images/fries.jpg" Height="180"/>
                         <TextBlock TextAlignment="Center"><Bold>Fries</Bold></TextBlock>
                     </StackPanel>
                 </Button>
-                <Button x:Name = "ButtonDrinks" Background="#FFDD42" Click="DrinksView_Clicked">
+                <Button x:Name = "DrinksButton" Background="#FFDD42" Click="DrinksView_Clicked">
                     <StackPanel>
                         <Image Source="/Images/drink.jpg" Height="180"/>
                         <TextBlock TextAlignment="Center"><Bold>Drinks</Bold></TextBlock>
@@ -69,7 +69,7 @@
                         <Label x:Name="LabelTotalAmmount" Content="Total Ammount" HorizontalAlignment="Center" FontWeight="Bold"/>
                         <TextBox x:Name = "TxtBlockCurrentAmmount" IsReadOnly="True"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <Button x:Name = "ViewOrderButton" Content = "View Order"/>
+                            <Button x:Name = "ViewOrderButton" Content = "View Order" Click="OrderView_Click"/>
                             <!--<Button x:Name = "GoToPaymentButton" Content = "Go to payment" Click="GoToPayment_Click" Visibility="Collapsed"/>
                             <Button x:Name = "ClearBasketButton" Content = "Clear Order" Click="ClearOrder_Click"/>-->
                         </StackPanel>

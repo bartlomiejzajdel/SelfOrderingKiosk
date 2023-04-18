@@ -34,6 +34,7 @@
                                     <Border BorderBrush="{x:Null}" Height="20">
                                         <TextBlock TextWrapping="Wrap" Text="{Binding Price, StringFormat='c'}" HorizontalAlignment="Center"/>
                                     </Border>
+                                    <Button x:Name="AddToOrderBtn" Content="Add" Width="40" Click="AddToOrder_Click"></Button>
                                 </StackPanel>
                             </StackPanel>
                         </Grid>
