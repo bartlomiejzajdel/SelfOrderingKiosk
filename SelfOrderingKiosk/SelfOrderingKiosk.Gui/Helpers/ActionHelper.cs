@@ -11,9 +11,9 @@ namespace SelfOrderingKiosk.Gui.Helpers
         {
             var button = (Button)sender;
             var product = (Product)button.DataContext;
-            if (Order.OrderItems.Any(p => p.ProductId == product.Id))
+            if (Order.OrderItems.Any(p => p.Product.Id == product.Id))
             {
-                Order.OrderItems.First(p => p.ProductId == product.Id).Quantity++;
+                Order.OrderItems.First(p => p.Product.Id == product.Id).Quantity++;
             }
             else
             {

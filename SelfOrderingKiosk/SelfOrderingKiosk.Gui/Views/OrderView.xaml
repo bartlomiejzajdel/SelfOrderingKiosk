@@ -11,7 +11,7 @@
     </UserControl.DataContext>
 
     <Grid>
-        <ListView ItemsSource="{Binding OrderListRows}"
+        <ListView ItemsSource="{Binding OrderItems}"
                   ScrollViewer.HorizontalScrollBarVisibility="Disabled">
 
             <ListView.ItemsPanel>
@@ -34,7 +34,7 @@
                                         <TextBlock TextWrapping="Wrap" Text="{Binding Product.Price, StringFormat='c'}" HorizontalAlignment="Center"/>
                                     </Border>
                                     <Border BorderBrush="{x:Null}" Height="20">
-                                        <TextBlock TextWrapping="Wrap" Text="{Binding Quantity, StringFormat='c'}" HorizontalAlignment="Center"/>
+                                        <TextBlock TextWrapping="Wrap" Text="{Binding Quantity}" HorizontalAlignment="Center"/>
                                     </Border>
                                 </StackPanel>
                             </StackPanel>
