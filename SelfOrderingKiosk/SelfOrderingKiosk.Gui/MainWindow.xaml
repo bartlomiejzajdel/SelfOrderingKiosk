@@ -21,6 +21,9 @@
         <DataTemplate x:Name="orderViewTemplate" DataType="{x:Type viewmodels:OrderViewModel}">
             <views:OrderView DataContext="{Binding}"/>
         </DataTemplate>
+        <DataTemplate x:Name="PeymentViewTemplate" DataType="{x:Type viewmodels:PaymentViewModel}">
+            <views:PaymentView DataContext="{Binding}"/>
+        </DataTemplate>
     </Window.Resources>
 
 
@@ -41,7 +44,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DockPanel Background="#FFDD42" Grid.Column="0" Grid.RowSpan="5">
+        <DockPanel x:Name="MainDockPanel" Background="#FFDD42" Grid.Column="0" Grid.RowSpan="5">
             <StackPanel>
                 <Button x:Name = "BurgersButton" Background="#FFDD42" Click="BurgersView_Clicked">
                     <StackPanel>
@@ -61,21 +64,23 @@
                         <TextBlock TextAlignment="Center"><Bold>Drinks</Bold></TextBlock>
                     </StackPanel>
                 </Button>
-                <Border BorderBrush="{x:Null}" BorderThickness="0 250">
+                <Border BorderBrush="{x:Null}" BorderThickness="0 300">
                     <StackPanel>
                         <Label x:Name="LabelBasket" Content="Basket" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14"/>
-                        <Label x:Name="LabelNumberOfItems" Content="Number Of Items" HorizontalAlignment="Center" FontWeight="Bold"/>
-                        <TextBox x:Name = "TxtBlockNumberOfItems" IsReadOnly="True"/>
                         <Label x:Name="LabelTotalAmmount" Content="Total Ammount" HorizontalAlignment="Center" FontWeight="Bold"/>
                         <TextBox x:Name = "TxtBlockCurrentAmmount" IsReadOnly="True"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <Button x:Name = "ViewOrderButton" Content = "View Order" Click="OrderView_Click"/>
-                            <!--<Button x:Name = "GoToPaymentButton" Content = "Go to payment" Click="GoToPayment_Click" Visibility="Collapsed"/>
-                            <Button x:Name = "ClearBasketButton" Content = "Clear Order" Click="ClearOrder_Click"/>-->
+                            <Button x:Name = "GoToPaymentButton" Content = "Go to payment" Click="GoToPaymentButton_Click" Visibility="Collapsed"/>
+                            <Button x:Name = "ClearBasketButton" Content = "Clear Order" Click="ClearBasketButton_Click" />
                         </StackPanel>
                     </StackPanel>
                 </Border>
             </StackPanel>
+        </DockPanel>
+
+        <DockPanel x:Name="SecondaryDockPanel" Background="#FFDD42" Grid.Column="0" Grid.RowSpan="5" Visibility="Hidden">
+            
         </DockPanel>
 
         <ContentControl Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="5" Content="{Binding}"/>

@@ -17,6 +17,10 @@ namespace SelfOrderingKiosk.Gui.Views
         private void AddToOrder_Click(object sender, RoutedEventArgs e)
         {
             ActionHelper.AddToOrder(sender, e);
+            MainWindow win = (MainWindow)Window.GetWindow(this);
+            win.UpdateCurrentAmmount();
+            win.ClearBasketButton.IsEnabled = true;
+            win.ViewOrderButton.IsEnabled = true;
         }
     }
 }
